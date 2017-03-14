@@ -23,4 +23,4 @@ subplot(2,2,3)
 imshow(kolo | kwadrat, [])
 
 subplot(2,2,4)
-imshow(kolo ^ kwadrat, [])
+imshow(xor(kolo, kwadrat), [])
