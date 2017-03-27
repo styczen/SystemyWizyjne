@@ -6,7 +6,7 @@ lena2 = imread('lena2.bmp');
 lena3 = imread('lena3.bmp');
 lena4 = imread('lena4.bmp');
 
-%figure(1)
+figure(1)
 subplot(4, 2, 1)
 imshow(lena1, [])
 subplot(4, 2, 2)
