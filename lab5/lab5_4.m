@@ -139,12 +139,11 @@ imshow(abs(result), [])
 title('abs')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 jet = imread('jet.bmp');
-% gradienty Sobela
-S1 = [-1, 0, 1; -2, 0, 2; -1, 0, 1];
-S2 = [-1, -2, -1; 0, 0, 0; 1, 2, 1];
+% kombinowany
+filtr_komb = sqrt(S1.^2 + S2.^2)/9;
 
 figure(9)
-result = uint8(conv2(double(jet), S1, 'same'));
+result = uint8(conv2(double(jet), filtr_komb, 'same'));
 
 subplot(1, 3, 1)
 imshow(jet, [])
@@ -158,8 +157,9 @@ subplot(1, 3, 3)
 imshow(abs(result), [])
 title('abs')
 
+filtr = (abs(S1)+abs(S2))/9;
 figure(10)
-result = uint8(conv2(double(jet), S2, 'same'));
+result = uint8(conv2(double(jet), filtr, 'same'));
 
 subplot(1, 3, 1)
 imshow(jet, [])
