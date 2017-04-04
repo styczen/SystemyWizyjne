@@ -142,8 +142,7 @@ jet = imread('jet.bmp');
 % kombinowany na obrazku
 filtr_komb = sqrt(S1.^2 + S2.^2)/9;
 
-jet1 = uint8(conv2(double(jet), S1, 'same'));
-jet2 = uint8(conv2(double(jet), S2, 'same'));
+jet1 = u
 
 figure(9)
 result = uint8(conv2(double(jet), filtr_komb, 'same'));
