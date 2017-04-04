@@ -1,0 +1,44 @@
+% Binaryzacja lokalna
+close all; clear all;
+
+rice = imread('rice.png');
+
+[X Y] = size(rice);
+
+riceBW = rice;
+W2 = 50; % wielkosc okna
+for i = 1:X
+   for j = 1:Y
+      mean = meanLT(i, j, floor(W2/2), riceBW, X, Y); 
+      if riceBW(i, j) >= mean
+          rice(i, j) = 255;
+      else
+          rice(i, j) = 0;
+      end
+   end
+end
+
+figure(1)
+subplot(1, 2, 1)
+imshow(riceBW)
+title('Oryginal')
+
+subplot(1, 2, 2)
+imshow(rice)
+title('Binaryzacja')
+
+k = 0.15;
+R = 128;
+% Algorytm Sauvoli
+for i = 1:X
+   for j = 1:Y
+      mean = meanLT(i, j, floor(W2/2), riceBW, X, Y);
+      std = stddevLT(i, j, floor(W2/2), riceBW, X, Y);
+      threshold = mean*(1+);
+      if riceBW(i, j) >= mean
+          rice(i, j) = 255;
+      else
+          rice(i, j) = 0;
+      end
+   end
+end
