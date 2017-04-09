@@ -1,9 +1,9 @@
+% Gradienty
 clear all; close all;
 
 kw = imread('kw.bmp');
+load maskiPP
 % Gradient Robertsa
-R1 = [0, 0, 0; -1, 0, 0; 0, 1, 0];
-R2 = [0, 0, 0; 0, 0, 1; 0, -1, 0];
 
 figure(1)
 result = uint8(conv2(double(kw), R1, 'same'));
@@ -140,13 +140,12 @@ title('abs')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 jet = imread('jet.bmp');
 % kombinowany na obrazku
-filtr_komb = sqrt(S1.^2 + S2.^2)/9;
 
-jet1 = uint8(conv2(double(jet), S1, 'same'));
-jet2 = uint8(conv2(double(jet), S2, 'same'));
+jet1 = conv2(double(jet), S1, 'same');
+jet2 = conv2(double(jet), S2, 'same');
 
 figure(9)
-result = uint8(conv2(double(jet), filtr_komb, 'same'));
+result = sqrt(jet1.^2 + jet2.^2);
 
 subplot(1, 3, 1)
 imshow(jet, [])
@@ -160,9 +159,8 @@ subplot(1, 3, 3)
 imshow(abs(result), [])
 title('abs')
 
-filtr = (abs(S1)+abs(S2))/9;
 figure(10)
-result = uint8(conv2(double(jet), filtr, 'same'));
+result = abs(jet1) + abs(jet2);
 
 subplot(1, 3, 1)
 imshow(jet, [])
