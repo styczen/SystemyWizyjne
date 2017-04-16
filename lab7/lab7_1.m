@@ -1,4 +1,4 @@
-% Segmentacja przez rozrost
+% Segmentacja przez rozrost bez sredniej kroczacej
 clear all, close all;
 
 obraz = imread('knee.png');
@@ -19,7 +19,7 @@ stos(1,1) = x_set; stos(1,2) = y_set;
 i = 1; % wskaznik na szczyt stosu
 
 visited(x_set,y_set) = 1; segmented(x_set,y_set) = 1;
-threshold = 40;
+threshold = 50;
 
 % petla
 while i ~= 0
