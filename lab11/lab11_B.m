@@ -37,7 +37,7 @@ imshow(H,[],'XData',T,'YData',R,...
             'InitialMagnification','fit');
 xlabel('\theta'), ylabel('\rho');
 axis on, axis normal, hold on;
-P  = houghpeaks(H,9,'threshold',ceil(0.3*max(H(:))));
+P  = houghpeaks(H,8,'threshold',ceil(0.3*max(H(:))));
 x = T(P(:,2)); y = R(P(:,1));
 plot(x,y,'s','color','white');
 % Find lines and plot them

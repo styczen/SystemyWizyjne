@@ -1,4 +1,4 @@
-% A. Transformata Hougha dla małej ilości punktów.
+% A. Transformata Hougha dla malej ilosci punktow.
 clear all; close all;
 
 obraz = zeros(11, 1);
