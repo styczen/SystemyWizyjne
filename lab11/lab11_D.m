@@ -7,19 +7,25 @@ obraz(10, 10) = 1;
 [H] = houghAB(obraz);
 
 figure
-subplot(1, 3, 1)
+subplot(2, 3, 1)
+imshow(obraz, [])
+subplot(2, 3, 4)
 imshow(H, [])
 title('Hough-jeden punkt')
 
 obraz(1, 3) = 1;
 [H] = houghAB(obraz);
-subplot(1, 3, 2)
+subplot(2, 3, 2)
+imshow(obraz, [])
+subplot(2, 3, 5)
 imshow(H, [])
 title('Hough-dwa punkty')
 
 obraz(2, 3) = 1;
-obraz(3, 3) = 1;
+obraz(4, 3) = 1;
 [H] = houghAB(obraz);
-subplot(1, 3, 3)
+subplot(2, 3, 3)
+imshow(obraz, [])
+subplot(2, 3, 6)
 imshow(H, [])
 title('Hough-punkty wspolliniowe')

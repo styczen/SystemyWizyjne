@@ -88,10 +88,8 @@ plot(xy_long(:,1),xy_long(:,2),'LineWidth',2,'Color','blue');
 clear all; close all;
 I  = imread('dom.tif');
 
-% rotI = imrotate(I,33,'crop');
-rotI = I;
-
-BW = edge(rotI,'canny');
+% BW = edge(rotI,'canny');
+BW = edge(I,'zerocross','nothinning');
 
 [H,T,R] = hough(BW);
 imshow(H,[],'XData',T,'YData',R,...
@@ -104,7 +102,7 @@ x = T(P(:,2)); y = R(P(:,1));
 plot(x,y,'s','color','white');
 
 lines = houghlines(BW,T,R,P,'FillGap',5,'MinLength',7);
-figure, imshow(rotI), hold on
+figure, imshow(I), hold on
 max_len = 0;
 for k = 1:length(lines)
    xy = [lines(k).point1; lines(k).point2];
