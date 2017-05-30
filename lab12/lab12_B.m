@@ -56,7 +56,7 @@ imshow(i, [])
 i = imreconstruct(i, img);
 subplot(r, c, 3)
 imshow(i, [])
-% Wypełnianie dziur
+% Wypelnianie dziur
 i = imfill(img, 'holes');
 subplot(r, c, 4)
 imshow(i, [])

@@ -166,7 +166,7 @@ subplot(1, 2, 2)
 imshow(IM2, [])
 
 %% analiza obrazka hom.bmp
-img = imread('hom.bmp')
+img = imread('hom.bmp');
 
 SE1 = [ 0 1 0; 1 1 1; 0 1 0]; % to, co chcemy wykryc
 SE2 = [ 1 0 1; 0 0 0; 1 0 1]; % dopelnienie maski SE2
