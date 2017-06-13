@@ -1,7 +1,7 @@
 % D.Transformata Hougha w przestrzeni ab
 clear all; close all;
 
-obraz = zeros(11, 1);
+obraz = zeros(11, 11);
 obraz(10, 10) = 1;
 
 [H] = houghAB(obraz);
@@ -23,6 +23,7 @@ title('Hough-dwa punkty')
 
 obraz(2, 3) = 1;
 obraz(4, 3) = 1;
+
 [H] = houghAB(obraz);
 subplot(2, 3, 3)
 imshow(obraz, [])

@@ -27,7 +27,6 @@ figure
 imshow(mean_table, []);
 title('Mean table')
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for i_index = 1:index
     

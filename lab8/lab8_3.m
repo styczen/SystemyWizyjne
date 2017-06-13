@@ -1,5 +1,5 @@
 % Indeksacja rzeczywistego obrazu
-% II. Rozpoznawanie obiektow za pomoc? wspolczynników ksztaltu
+% II. Rozpoznawanie obiektow za pomoca wspolczynnikow ksztaltu
 % 2. Wspolczynniki ksztaltu
 % 6.
 clear all; close all;

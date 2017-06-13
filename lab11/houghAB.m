@@ -10,11 +10,13 @@ function H = houghAB(I)
     
     for xx=1:X
         for yy=1:Y            
-            if (I(xx,yy) > 0 )                
+            if (I(yy,xx) > 0 )                
                 for i=1:numel(A)
                     b_v = yy - A(i)*xx;           
                     [v bb] = min (abs (b_v - B) );
-                    H(i,bb) = H(i,bb) + 1;                   
+                    if b_v>=-10 && b_v<=10
+                      H(i,bb) = H(i,bb) + 1;
+                    end  
                 end
             end
         end
